@@ -341,3 +341,343 @@
   margin-bottom: 20px;
   border: 1px solid #c3e6cb;
 }
+
+/* ============================================ */
+/* HTML Preview Diff Section */
+/* ============================================ */
+
+.html-preview-section {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.diff-summary {
+  margin: 8px 0 0 0;
+  color: #667eea;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  color: #333;
+  font-weight: 600;
+  user-select: none;
+}
+
+.checkbox-label input[type="checkbox"] {
+  cursor: pointer;
+  width: 16px;
+  height: 16px;
+  accent-color: #667eea;
+}
+
+.checkbox-label input[type="checkbox"]:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.no-diff-message {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  background: linear-gradient(135deg, #f5f7fa 0%, #e8eef5 100%);
+  min-height: 200px;
+}
+
+.no-diff-content {
+  text-align: center;
+}
+
+.no-diff-icon {
+  font-size: 48px;
+  margin-bottom: 15px;
+  animation: bounce 1s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.no-diff-message h3 {
+  color: #667eea;
+  font-size: 22px;
+  margin: 0 0 10px 0;
+  font-weight: 600;
+}
+
+.no-diff-message p {
+  color: #6c757d;
+  font-size: 15px;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Preview Panels Container */
+.preview-panels-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  border-top: 1px solid #e9ecef;
+  min-height: 400px;
+  max-height: 600px;
+}
+
+/* Individual Preview Panel */
+.preview-panel {
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid #e9ecef;
+  overflow: hidden;
+  background-color: #fafbfc;
+}
+
+.preview-panel:last-child {
+  border-right: none;
+}
+
+.preview-label {
+  background-color: #f8f9fa;
+  padding: 12px 15px;
+  font-weight: 600;
+  color: #333;
+  border-bottom: 1px solid #e9ecef;
+  font-size: 13px;
+  user-select: none;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.preview-content {
+  flex: 1;
+  overflow: auto;
+  padding: 15px;
+  background-color: white;
+}
+
+.html-preview {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.html-preview img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 10px 0;
+  border: 1px solid #e9ecef;
+  border-radius: 4px;
+}
+
+.html-preview a {
+  color: #0066cc;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.html-preview a:hover {
+  color: #0052a3;
+}
+
+.html-preview p, .html-preview div, .html-preview span {
+  margin: 8px 0;
+}
+
+.html-preview h1, .html-preview h2, .html-preview h3, 
+.html-preview h4, .html-preview h5, .html-preview h6 {
+  margin: 15px 0 10px 0;
+  line-height: 1.3;
+}
+
+.html-preview h1 { font-size: 24px; font-weight: 700; }
+.html-preview h2 { font-size: 20px; font-weight: 700; }
+.html-preview h3 { font-size: 18px; font-weight: 700; }
+.html-preview h4 { font-size: 16px; font-weight: 700; }
+.html-preview h5 { font-size: 14px; font-weight: 700; }
+.html-preview h6 { font-size: 12px; font-weight: 700; }
+
+.html-preview ul, .html-preview ol {
+  margin: 10px 0;
+  padding-left: 30px;
+}
+
+.html-preview li {
+  margin: 5px 0;
+}
+
+.html-preview table {
+  border-collapse: collapse;
+  margin: 10px 0;
+  width: 100%;
+}
+
+.html-preview th, .html-preview td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.html-preview th {
+  background-color: #f8f9fa;
+  font-weight: 600;
+}
+
+/* Difference Highlighting */
+.diff-highlight {
+  padding: 2px 4px;
+  border-radius: 2px;
+  font-weight: 500;
+}
+
+.diff-highlight-added {
+  background-color: #d4edda;
+  border: 1px solid #c3e6cb;
+  color: #155724;
+  padding: 2px 4px;
+  border-radius: 2px;
+}
+
+.diff-highlight-removed {
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+  color: #721c24;
+  padding: 2px 4px;
+  border-radius: 2px;
+  text-decoration: line-through;
+}
+
+.diff-highlight-changed {
+  background-color: #fff3cd;
+  border: 1px solid #ffc107;
+  color: #856404;
+  padding: 2px 4px;
+  border-radius: 2px;
+  font-weight: 600;
+}
+
+/* Difference Legend */
+.diff-legend {
+  display: flex;
+  gap: 20px;
+  padding: 12px 20px;
+  background-color: #f8f9fa;
+  border-top: 1px solid #e9ecef;
+  flex-wrap: wrap;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: #333;
+  font-weight: 500;
+}
+
+.legend-box {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border-radius: 3px;
+  border: 1px solid #ddd;
+}
+
+.legend-box.added {
+  background-color: #d4edda;
+  border-color: #c3e6cb;
+}
+
+.legend-box.removed {
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
+}
+
+.legend-box.changed {
+  background-color: #fff3cd;
+  border-color: #ffc107;
+}
+
+/* Scrollbar Styling for Preview Panels */
+.preview-content::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.preview-content::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.preview-content::-webkit-scrollbar-thumb {
+  background: #667eea;
+  border-radius: 4px;
+}
+
+.preview-content::-webkit-scrollbar-thumb:hover {
+  background: #764ba2;
+}
+
+/* Responsive Design for Preview Section */
+@media (max-width: 1024px) {
+  .preview-panels-container {
+    grid-template-columns: 1fr;
+    max-height: 500px;
+  }
+
+  .preview-panel {
+    border-right: none;
+    border-bottom: 1px solid #e9ecef;
+  }
+
+  .preview-panel:last-child {
+    border-bottom: none;
+  }
+
+  .diff-legend {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .preview-panels-container {
+    max-height: 400px;
+  }
+
+  .preview-content {
+    padding: 10px;
+  }
+
+  .html-preview {
+    font-size: 13px;
+  }
+
+  .section-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .header-controls {
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+  }
+
+  .checkbox-label {
+    width: 100%;
+  }
+}

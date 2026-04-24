@@ -3,6 +3,7 @@ import './App.css';
 import FileSelector from './components/FileSelector';
 import DiffViewerSection from './components/DiffViewerSection';
 import MonacoEditorSection from './components/MonacoEditorSection';
+import HtmlPreviewDiff from './components/HtmlPreviewDiff';
 
 function App() {
   const [files, setFiles] = useState([]);
@@ -147,6 +148,16 @@ function App() {
             selectedFile1={selectedFile1}
             selectedFile2={selectedFile2}
             theme={theme}
+          />
+        </div>
+
+        {/* HTML Preview Diff Section */}
+        <div className="section-wrapper">
+          <HtmlPreviewDiff
+            file1Content={file1Content}
+            file2Content={file2Content}
+            selectedFile1={selectedFile1}
+            selectedFile2={selectedFile2}
           />
         </div>
       </div>
